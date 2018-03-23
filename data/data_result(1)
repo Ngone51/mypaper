@@ -1,0 +1,194 @@
+----------> Exp1: a = 0.100000
+Generate training data...
+
+-----> Methods: GNMF
+GNMF start, k: 120, r: 500, e: 0.100000, s: 0.100000
+Iteration start.
+Iteration ended. Finally, the lost value is 71.188759
+GNMF ended.
+TP: 540.000000, FP: 425.000000, FN: 115.000000
+precision: 0.559585, recall: 0.824427
+f1: 0.666667
+rmse: 0.107084
+mae: 0.011467
+
+-----> Methods: NMF
+NMF start, k: 100, r: 500, e: 0.000010
+Iteration start.
+Iteration ended. Finally, the lost value is 75.450661
+NMF ended.
+TP: 528.000000, FP: 437.000000, FN: 127.000000
+precision: 0.547150, recall: 0.806107
+f1: 0.651852
+rmse: 0.109437
+mae: 0.011977
+
+-----> Methods: SVD
+TP: 541.000000, FP: 424.000000, FN: 114.000000
+precision: 0.560622, recall: 0.825954
+f1: 0.667901
+rmse: 0.106885
+mae: 0.011424
+
+-----> Methods: popularity
+TP: 64.000000, FP: 901.000000, FN: 591.000000
+precision: 0.066321, recall: 0.097710
+f1: 0.079012
+rmse: 0.177996
+mae: 0.031683
+
+----------> Exp2: a = 0.200000
+Generate training data...
+
+-----> Methods: GNMF
+GNMF start, k: 120, r: 500, e: 0.100000, s: 0.100000
+Iteration start.
+Iteration ended. Finally, the lost value is 51.351497
+GNMF ended.
+TP: 492.000000, FP: 473.000000, FN: 163.000000
+precision: 0.509845, recall: 0.751145
+f1: 0.607407
+rmse: 0.116213
+mae: 0.013505
+
+-----> Methods: NMF
+NMF start, k: 100, r: 500, e: 0.000010
+Iteration start.
+Iteration ended. Finally, the lost value is 68.993446
+NMF ended.
+TP: 471.000000, FP: 494.000000, FN: 184.000000
+precision: 0.488083, recall: 0.719084
+f1: 0.581481
+rmse: 0.119989
+mae: 0.014397
+
+-----> Methods: SVD
+TP: 490.000000, FP: 475.000000, FN: 165.000000
+precision: 0.507772, recall: 0.748092
+f1: 0.604938
+rmse: 0.116578
+mae: 0.013590
+
+-----> Methods: popularity
+TP: 62.000000, FP: 903.000000, FN: 593.000000
+precision: 0.064249, recall: 0.094656
+f1: 0.076543
+rmse: 0.178235
+mae: 0.031768
+
+----------> Exp3: a = 0.300000
+Generate training data...
+
+-----> Methods: GNMF
+GNMF start, k: 120, r: 500, e: 0.100000, s: 0.100000
+Iteration start.
+Iteration ended. Finally, the lost value is 36.815308
+GNMF ended.
+TP: 449.000000, FP: 516.000000, FN: 206.000000
+precision: 0.465285, recall: 0.685496
+f1: 0.554321
+rmse: 0.123821
+mae: 0.015332
+
+-----> Methods: NMF
+NMF start, k: 100, r: 500, e: 0.000010
+Iteration start.
+Iteration ended. Finally, the lost value is 52.565473
+NMF ended.
+TP: 431.000000, FP: 534.000000, FN: 224.000000
+precision: 0.446632, recall: 0.658015
+f1: 0.532099
+rmse: 0.126871
+mae: 0.016096
+
+-----> Methods: SVD
+TP: 447.000000, FP: 518.000000, FN: 208.000000
+precision: 0.463212, recall: 0.682443
+f1: 0.551852
+rmse: 0.124164
+mae: 0.015417
+
+-----> Methods: popularity
+TP: 63.000000, FP: 902.000000, FN: 592.000000
+precision: 0.065285, recall: 0.096183
+f1: 0.077778
+rmse: 0.178116
+mae: 0.031725
+
+----------> Exp4: a = 0.400000
+Generate training data...
+
+-----> Methods: GNMF
+GNMF start, k: 120, r: 500, e: 0.100000, s: 0.100000
+Iteration start.
+Iteration ended. Finally, the lost value is 30.084134
+GNMF ended.
+TP: 398.000000, FP: 567.000000, FN: 257.000000
+precision: 0.412435, recall: 0.607634
+f1: 0.491358
+rmse: 0.132279
+mae: 0.017498
+
+-----> Methods: NMF
+NMF start, k: 100, r: 500, e: 0.000010
+Iteration start.
+Iteration ended. Finally, the lost value is 56.110847
+NMF ended.
+TP: 365.000000, FP: 600.000000, FN: 290.000000
+precision: 0.378238, recall: 0.557252
+f1: 0.450617
+rmse: 0.137474
+mae: 0.018899
+
+-----> Methods: SVD
+TP: 390.000000, FP: 575.000000, FN: 265.000000
+precision: 0.404145, recall: 0.595420
+f1: 0.481481
+rmse: 0.133557
+mae: 0.017837
+
+-----> Methods: popularity
+TP: 60.000000, FP: 905.000000, FN: 595.000000
+precision: 0.062176, recall: 0.091603
+f1: 0.074074
+rmse: 0.178473
+mae: 0.031853
+
+----------> Exp5: a = 0.500000
+Generate training data...
+
+-----> Methods: GNMF
+GNMF start, k: 120, r: 500, e: 0.100000, s: 0.100000
+Iteration start.
+Iteration ended. Finally, the lost value is 37.522923
+GNMF ended.
+TP: 343.000000, FP: 622.000000, FN: 312.000000
+precision: 0.355440, recall: 0.523664
+f1: 0.423457
+rmse: 0.140832
+mae: 0.019834
+
+-----> Methods: NMF
+NMF start, k: 100, r: 500, e: 0.000010
+Iteration start.
+Iteration ended. Finally, the lost value is 59.435607
+NMF ended.
+TP: 314.000000, FP: 651.000000, FN: 341.000000
+precision: 0.325389, recall: 0.479389
+f1: 0.387654
+rmse: 0.145138
+mae: 0.021065
+
+-----> Methods: SVD
+TP: 337.000000, FP: 628.000000, FN: 318.000000
+precision: 0.349223, recall: 0.514504
+f1: 0.416049
+rmse: 0.141733
+mae: 0.020088
+
+-----> Methods: popularity
+TP: 58.000000, FP: 907.000000, FN: 597.000000
+precision: 0.060104, recall: 0.088550
+f1: 0.071605
+rmse: 0.178711
+mae: 0.031937
