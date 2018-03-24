@@ -19,6 +19,7 @@ import os
 
 
 def adjust():
+	recommendPerUser = 3
 	subG = utils.loadCSV(file_path = "../../data/common_big_user_graph2.csv", \
 		delimiter = " ", needZeroRow = True)
 	# 由于subG和data_X中id不兼容，所以我们需要current id和original id的映射表
@@ -92,7 +93,7 @@ def adjust():
 		(U, V) = gnmf(train_X, W, D, L, k = kk, r = ite, e = 0.1, s = smooth)
 		res_X = dot(U, V.T)
 		# 获取预测正样本集
-		predict_positives = topKbyRow(res_X, 5)
+		predict_positives = topKbyRow(res_X, recommendPerUser)
 		# predict_positives = topKbyAll(res_X, 655)
 		(tp, fp, fn) = TPFPFN(positives, predict_positives)
 		(p, r) = precisionAndrecall(tp, fp, fn)
@@ -104,7 +105,7 @@ def adjust():
 		S = diag(s)
 		res_X = dot(dot(U, S), V)
 		# 获取预测正样本集
-		predict_positives = topKbyRow(array(res_X), 5)
+		predict_positives = topKbyRow(array(res_X), recommendPerUser)
 		# predict_positives = topKbyAll(array(res_X), 655)
 		(tp, fp, fn) = TPFPFN(positives, predict_positives)
 		(p, r) = precisionAndrecall(tp, fp, fn)
