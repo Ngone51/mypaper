@@ -10,10 +10,10 @@ import numpy as np
   @parameter2：data: 将要转换的数据. 1D or 2D array_like.
   @parameter3：delimiter, 数据存储的分隔符
 """
-def saveCSV(file_path, data, delimiter = ","):
+def saveCSV(file_path, data, fmt = "%d", delimiter = ","):
 	# fmt用于控制数据的输出格式，类似于c语言里的prinf的格式控制
 	# 可以是‘%10.5f’、‘%d’等等
-	np.savetxt(file_path, data, fmt = "%d", delimiter = delimiter)
+	np.savetxt(file_path, data, fmt = fmt, delimiter = delimiter)
 
 """
   @description: 加载csv文件，并通过numpy转换成数组

@@ -38,9 +38,10 @@ def adjust():
 	positives = getPositiveSampleSet(data_X)
 	
 	# 组合参数
-	ks = [100, 120, 130, 140]
-	rs = [500, 700, 900, 1100, 1200]
-	ss = [0.08, 0.04, 0.01, 0.005, 0.001]
+	# ks = [130, 135, 140, 145, 150, 155, 160, 165, 170]
+	ks = [170]
+	rs = [800]
+	ss = [0.000035]
 	outstanding_params = []
 	params = []
 	for i in xrange(len(ks)):
@@ -50,9 +51,9 @@ def adjust():
 
 	tmp_files = []
 	for i in xrange(len(params)):
-		k = params[i][0]
-		r = params[i][1]
-		s = params[i][2]
+		kk = params[i][0]
+		ite = params[i][1]
+		smooth = params[i][2]
 		print "\n[ Exp%d: a = %f ]" % (i + 1, 0.4)
 		# 获取训练集和train_X
 		print "Generate training set."
@@ -64,7 +65,7 @@ def adjust():
 		input_file = PAPER_DATA_PATH + "tmp_exp" + str(i + 1) + "_common_big_user_graph2.csv"
 		output_file = PAPER_DATA_PATH + "tmp_exp" + str(i + 1) + \
 		"_common_big_user_feature_vector_undirected2.emd"
-		utils.saveCSV(input_file, train_set, delimiter = " ")
+		utils.saveCSV(input_file, train_set, delimiter = "	")
 		tmp_files.append(input_file)
 		# run node2vec
 		cmd = "python " + NODE2VEC_ABSOLUTE_PATH + "src/main.py --input " + \
@@ -88,7 +89,7 @@ def adjust():
 		'''GNMF'''
 		print "\n[ Methods: GNMF ]"
 		# 训练模型
-		(U, V) = gnmf(train_X, W, D, L, k = k, r = r, e = 0.1, s = s)
+		(U, V) = gnmf(train_X, W, D, L, k = kk, r = ite, e = 0.1, s = smooth)
 		res_X = dot(U, V.T)
 		# 获取预测正样本集
 		predict_positives = topKbyRow(res_X, 5)
@@ -109,15 +110,19 @@ def adjust():
 		(p, r) = precisionAndrecall(tp, fp, fn)
 		sf1 = f1(p, r)
 	
-		if gf1 > sf1:
+		if gf1 >= sf1:
 			outstanding_params.append(params[i])
-			print "gf1: %f sf1: %f, k: %f, r: %f, s: %s" % (gf1, sf1, k, r, s)
+			print "gf1: %f sf1: %f, k: %f, r: %f, s: %s" % (gf1, sf1, kk, ite, smooth)
 
 		# 清理临时文件
 		for tmp_file in tmp_files:
 			os.remove(tmp_file)
-	utils.saveCSV(PAPER_DATA_PATH + "outstanding_params.csv", \
-	outstanding_params, delimiter = ",")	
+		tmp_files = []
+	outstanding_params_file = open(PAPER_DATA_PATH + "outstanding_params", "a+")	
+	for param in outstanding_params:
+		outstanding_params_file.write(str(param))
+		outstanding_params_file.write("\n")
+
 if __name__ == '__main__':
 	adjust()
 
